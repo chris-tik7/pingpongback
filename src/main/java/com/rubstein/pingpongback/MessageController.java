@@ -21,4 +21,9 @@ public class MessageController {
     public Message saveMessage(@RequestBody Message message) {
         return repository.save(message);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteMessage(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 }
