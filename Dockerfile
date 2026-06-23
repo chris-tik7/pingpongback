@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stufe 2: Die App ausführen (nur mit dem Nötigsten)
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 # Kopiert die fertige .jar Datei aus Stufe 1
 COPY --from=build /app/target/*.jar app.jar
